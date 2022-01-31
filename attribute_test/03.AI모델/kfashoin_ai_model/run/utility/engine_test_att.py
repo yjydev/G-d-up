@@ -142,7 +142,8 @@ class Engine(object):
         if self._state('resume') is not None:
             if os.path.isfile(self.state['resume']):
                 print("=> loading checkpoint '{}'".format(self.state['resume']))
-                checkpoint = torch.load(self.state['resume'])
+                # checkpoint = torch.load(self.state['resume'])
+                checkpoint = torch.load(self.state['resume'], map_location=torch.device('cpu'))
                 self.state['start_epoch'] = checkpoint['epoch']
                 self.state['best_score'] = checkpoint['best_score']
                 model.load_state_dict(checkpoint['state_dict'])
