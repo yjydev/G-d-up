@@ -14,7 +14,10 @@ class load_data(data.Dataset):
 
     def get_anno(self):
         list_path = os.path.join(self.root, '{}_anno_{}_final.json'.format(self.phase, self.attribute))
-        self.img_list = json.load(open(list_path, 'r'))
+        if self.attribute == 'category':
+            self.img_list = json.load(open(list_path, 'r'))
+        else:
+            self.img_list = json.load(open(list_path, 'r', encoding='UTF8'))
         self.cat2idx = json.load(open(os.path.join(self.root, 'category_{}_final.json').format(self.attribute), 'r'))
 
     def __len__(self):
