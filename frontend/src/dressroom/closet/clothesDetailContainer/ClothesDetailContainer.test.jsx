@@ -4,14 +4,14 @@
 
 import React from 'react';
 import { render } from "@testing-library/react";
-import ClosetDetailContainer from './ClosetDetailContainer.jsx';
+import ClothesDetailContainer from './ClothesDetailContainer.jsx';
 import { MemoryRouter } from 'react-router-dom';
 
-describe('ClosetDetailContainer', () => {
-  it('renders ClosetDetailContainer', () => {
+describe('ClothesDetailContainer', () => {
+  it('renders ClothesDetailContainer', () => {
     const { getByText } = render((
       <MemoryRouter>
-        <ClosetDetailContainer />
+        <ClothesDetailContainer />
       </MemoryRouter>
     ))
 
