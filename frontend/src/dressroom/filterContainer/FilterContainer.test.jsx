@@ -19,9 +19,7 @@ describe('FilterContainer', () => {
       'custom': [],
     };
     
-    useSelector.mockImplementation((selector) => selector({
-      initialState,
-    }));
+    useSelector.mockImplementation((selector) => selector(initialState));
 
     const { getByText } = render((
       <FilterContainer />
