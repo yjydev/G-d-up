@@ -13,7 +13,7 @@ import {
 export default function ClosetContainer() {
 
 	return (
-		<div css={GridContainer}>
+		<div>
 			<h5>옷장</h5>
 			<FilterContainer />
 			<ClothesItemListContainer />
@@ -33,7 +33,3 @@ export default function ClosetContainer() {
 		</div>
 	);
 }
-
-const GridContainer = css`
-	display: grid;
-`;
