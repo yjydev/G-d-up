@@ -5,7 +5,7 @@
 import React from 'react';
 import { render } from "@testing-library/react";
 import ClothesItemList from './ClothesItemList.jsx';
-import { clothesData } from '/fixtures/clothesList.js';
+import { clothesData } from '../../../../fixtures/clothesList.js';
 
 describe('ClothesItemList', () => {
   const clothes = clothesData;
@@ -15,6 +15,6 @@ describe('ClothesItemList', () => {
       <ClothesItemList
         clothes={clothes}
       />
-    )
+    );
   });
 });
