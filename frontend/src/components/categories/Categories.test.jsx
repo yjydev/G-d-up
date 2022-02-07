@@ -5,19 +5,22 @@
 import React from 'react';
 import { render } from "@testing-library/react";
 import Categories from './Categories.jsx';
+import { categories } from '../../constants/filter.js';
 
 const handleClick = jest.fn();
 
 describe('Categories', () => {
   it('renders Categories', () => {
-    const { getByText } = render((
+    render((
       <Categories
-        categories={[]}
+        categories={categories}
         selectedCategory={'전체'}
         handleClick={handleClick}
       />
     ));
 
-    expect(getByText(/Nav/)).not.toBeNull();
+    expect(categories).toHaveLength(6);
+    expect(categories).toContain("상의");
+    expect(categories).not.toContain("자켓");
   });
 });
