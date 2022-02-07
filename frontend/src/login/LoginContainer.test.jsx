@@ -27,7 +27,7 @@ function renderLogin() {
 
 describe('LoginContainer', () => {
   const dispatch = jest.fn();
-  useDispatch.mockImplementation(() => dispatch)
+  useDispatch.mockImplementation(() => dispatch);
 
   it('renders Login Page', () => {
     renderLogin();
