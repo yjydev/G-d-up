@@ -5,7 +5,7 @@
 import React from 'react';
 import { render, fireEvent } from "@testing-library/react";
 import ClosetSidebar from './ClosetSidebar';
-import { season, colors } from '../../constants/filter';
+import { season, colors } from '../../../constants/filter';
 
 const initialState = {
   'category': '전체',

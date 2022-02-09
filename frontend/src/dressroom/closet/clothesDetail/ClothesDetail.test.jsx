@@ -5,7 +5,7 @@
 import React from 'react';
 import { render, fireEvent } from "@testing-library/react";
 import ClothesDetail from './ClothesDetail';
-import { season } from '../../constants/filter';
+import { season } from '../../../constants/filter';
 
 const selectedClothes = {
   id: 1,

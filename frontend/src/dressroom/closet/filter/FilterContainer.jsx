@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Categories from '../../components/categories/Categories.jsx';
-import ClosetSideBar from '../../components/closetSidebar/ClosetSideBar.jsx';
+import Categories from './Categories.jsx';
+import ClosetSideBar from './ClosetSideBar.jsx';
 import {
   changeCategoryFilter,
   changeIsUserItemFilter,
@@ -9,8 +9,8 @@ import {
   changeColorFilter,
   addCustomFilter,
   deleteCustomFilter,
-} from '../../filterSlice';
-import { categories, season, colors } from '../../constants/filter';
+} from '../../../slices/filterSlice';
+import { categories, season, colors } from '../../../constants/filter';
 
 function FilterContainer() {
   const inputRef = useRef();

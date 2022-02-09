@@ -5,7 +5,7 @@
 import React from 'react';
 import { render } from "@testing-library/react";
 import Categories from './Categories.jsx';
-import { categories } from '../../constants/filter.js';
+import { categories } from '../../../constants/filter';
  
 const handleClick = jest.fn();
  

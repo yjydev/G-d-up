@@ -5,7 +5,7 @@ import { css, jsx } from "@emotion/react";
 import ClothesItemList from './ClothesItemList.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectClothes } from '../../../clothesSlice';
+import { selectClothes } from '../../../slices/clothesSlice';
 import { debounce } from "lodash";
 
 export default function ClothesItemListContainer() {

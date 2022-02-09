@@ -3,7 +3,7 @@ import HomeContainer from './HomeContainer.jsx';
 import LoginContainer from './login/LoginContainer.jsx';
 import SignupContainer from './signup/SignupContainer.jsx';
 import ClosetContainer from './dressroom/closet/ClosetContainer.jsx';
-import AddClothesContainer from './dressroom/closet/AddClothesContainer.jsx';
+import AddClothesContainer from './dressroom/closet/addClothes/AddClothesContainer.jsx';
 
 import DressRoomContainer from './dressroom/DressRoomContainer';
 import { Route, Routes } from 'react-router-dom';
