@@ -12,7 +12,7 @@ export const clothesList = [{
 export const clothesData =  [
   {
     id: 1,
-    image: 'https://image.msscdn.net/images/goods_img/20180619/803523/803523_1_500.jpg',
+    image: '/test/test.png',
     category: '상의',
     color: 'black',
     material: '면',
@@ -24,7 +24,7 @@ export const clothesData =  [
   },
   {
     id: 2,
-    image: 'image2',
+    image: '/test/test2.png',
     category: '상의',
     season: '가을',
     color: 'white',
@@ -32,7 +32,7 @@ export const clothesData =  [
   },
   {
     id: 3,
-    image: 'image3',
+    image: '/test/test3.png',
     category: '하의',
     season: '여름',
     color: 'red',
