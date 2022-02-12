@@ -13,7 +13,7 @@ import java.util.List;
 public interface CodyService {
 
     public List<CodyEntity> getAllCodyList() ;
-    public List<CodyAllList> getUserCodyList(String id);
+    public List<CodyEntity> getUserCodyList(String id);
     public int deleteCodyItem(int id);
     public int addCodyItem(CreateCody cc, MultipartFile file)  ;
     public int updateCodyItem(UpdateCody uc, MultipartFile file);

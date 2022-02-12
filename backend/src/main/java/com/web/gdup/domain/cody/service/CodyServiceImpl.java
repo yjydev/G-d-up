@@ -54,15 +54,12 @@ public class CodyServiceImpl implements CodyService {
     }
 
     @Override
-    public List<CodyAllList> getUserCodyList(String name) {
+    public List<CodyEntity> getUserCodyList(String name) {
 
         List<CodyEntity> tmp = cr.findAllByUserName(name);
-        List<CodyAllList> codyAllLists = new ArrayList<>();
-        for (CodyEntity a : tmp) {
-            codyAllLists.add(new CodyAllList(a, ir.getOne(a.getImageId())));
-        }
 
-        return codyAllLists;
+
+        return tmp;
 
     }
 
@@ -73,7 +70,7 @@ public class CodyServiceImpl implements CodyService {
         if (cr.deleteByCodyId(id) == 0)
             return 0;
 
-        int imageId = tmp.getImageId();
+        int imageId = tmp.getImageModel().getImageId();
 
         if (ir.deleteByImageId(imageId) == 0)
             return 0;
@@ -87,8 +84,8 @@ public class CodyServiceImpl implements CodyService {
         System.out.println(file.getOriginalFilename());
         CodyEntity ce = cr.getOne(uc.getCodyId());
 
-        ImageDto imageDto = updateImage(file, ce.getImageId());
-
+        ImageDto imageDto = updateImage(file, ce.getImageModel().getImageId());
+        ImageDto iDto = imageService.getImage(ce.getImageModel().getImageId());
 
         chr.deleteByCodyId(ce.getCodyId());
 
@@ -100,7 +97,7 @@ public class CodyServiceImpl implements CodyService {
                 .content(uc.getContent())
                 .userName(uc.getUserName())
                 .secret(uc.getSecret())
-                .imageId(ce.getImageId())
+                .imageModel(iDto.toEntity())
                 .build();
 
         cr.save(ce);
@@ -141,6 +138,7 @@ public class CodyServiceImpl implements CodyService {
         ImageDto image = saveImage(file);
 
         int imageId = imageService.insertImage(image);
+        ImageDto iDto = imageService.getImage(imageId);
 
 
         CodyEntity codyDto = CodyEntity.builder()
@@ -150,7 +148,7 @@ public class CodyServiceImpl implements CodyService {
                 .secret(cc.getSecret())
                 .updateDate(LocalDateTime.now())
                 .registrationDate(LocalDateTime.now())
-                .imageId(imageId)
+                .imageModel(iDto.toEntity())
                 .build();
 
 
