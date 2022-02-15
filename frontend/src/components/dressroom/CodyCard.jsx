@@ -24,9 +24,9 @@ const cardStyle = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: bisque;
-  width: 20rem;
-  height: fit-content;
+  background-color: #685f60;
+  width: 25rem;
+  height: 25rem;
   min-height: 20rem;
   padding: 10px;
   border-radius: 10px;

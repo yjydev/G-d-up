@@ -121,7 +121,7 @@ export default function CodyDetailModal({ handleResponse, isResOpen, resText, de
 const Container = css`
   display: grid;
 	grid-template-columns: 350px 1fr;
-	grid-template-rows: repeat(4,1fr);
+	grid-template-rows: 2.5fr 1.5fr 2fr 1fr;
 	max-width: 100%;
   grid-row: 3;
   grid-column: 1;
@@ -265,6 +265,7 @@ const submitBtnContainer = css`
 	text-align: center;
 	transition: 0.5s;
   grid-row: 4;
+  align-items: center;
 `;
 
 const delBtn = css`
@@ -359,8 +360,8 @@ const modalClass = css`
 }
 
 .ReactModal__Content--after-open {
-	width: 50%;
-	height: 80%;
+	width: 30%;
+	height: 70%;
 	grid-column:4;
 	background-color: #f2f2f2;
 	justify-content: center;

@@ -165,11 +165,17 @@ const createBtn = css`
 `;
 
 const backBtn = css`
-  width: 50px;
-  height: 30px;
   position: fixed;
   bottom: 30px;
   right: 50px;
+
+  background: #c99f9f;
+	padding: 0.5rem 1rem;
+	width: 4rem;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
 `;
 
 const carousel = css`
