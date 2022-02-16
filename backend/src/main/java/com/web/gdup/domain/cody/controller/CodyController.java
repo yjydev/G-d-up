@@ -139,7 +139,6 @@ public class CodyController {
             result.status = false;
             result.message = "잘못된 정보 입력";
             result.data = null;
-
             responseBody = new ResponseEntity<>(result, HttpStatus.OK);
             return responseBody;
         }

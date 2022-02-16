@@ -19,7 +19,7 @@ public class UpdateCody {
     private String content;
     private int secret;
     private String codyTag;
-    private List<ClothingInCody> clothingList;
+    private List<ClothingInCodyDto> clothingList;
 
     public CodyEntity toEntity(ImageEntity imageEntity){
         CodyEntity build = CodyEntity.builder()

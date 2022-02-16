@@ -1,7 +1,7 @@
 package com.web.gdup.domain.cody.service;
 
 
-import com.web.gdup.domain.cody.dto.ClothingInCody;
+import com.web.gdup.domain.cody.dto.ClothingInCodyDto;
 import com.web.gdup.domain.cody.dto.CodyDtoAll;
 import com.web.gdup.domain.cody.dto.CreateCody;
 import com.web.gdup.domain.cody.dto.UpdateCody;
@@ -62,10 +62,18 @@ public class CodyServiceImpl implements CodyService {
         for (CodyEntity codyEntity : codyEntities) {
             List<String> codyTagList = new ArrayList<>();
             List<CodyHashtagEntity> codyHashtagEntities = codyHashtagRepository.findAllByCodyId(codyEntity.getCodyId());
+
             for (CodyHashtagEntity codyHashtagEntity : codyHashtagEntities) {
                 codyTagList.add(codyHashtagEntity.getTagName());
             }
-            codyDtoAlls.add(new CodyDtoAll(codyEntity, codyTagList));
+
+            List<CodyClothingEntity> cclist = codyClothingRepository.getAllByCodyId(codyEntity.getCodyId());
+            List<ClothingInCodyDto> cicdtos = new ArrayList<>();
+            for(CodyClothingEntity codyClothingEntity :cclist){
+                cicdtos.add(new ClothingInCodyDto(codyClothingEntity,imageRepository.getOne(codyClothingEntity.getClothingId())));
+            }
+
+            codyDtoAlls.add(new CodyDtoAll(codyEntity, codyTagList,cicdtos));
         }
         return codyDtoAlls;
     }
@@ -106,17 +114,22 @@ public class CodyServiceImpl implements CodyService {
         codyClothingRepository.deleteByCodyId(codyEntityOptional.get().getCodyId());
 
         int len = updateCody.getClothingList().size();
-        List<ClothingInCody> cciList = updateCody.getClothingList();
+        List<ClothingInCodyDto> cciList = updateCody.getClothingList();
+        List<CodyClothingEntity> cceList = new ArrayList<>();
         for (int i = 0; i < len; i++) {
-            ClothingInCody tmp = cciList.get(i);
+            ClothingInCodyDto tmp = cciList.get(i);
             CodyClothingEntity cci = CodyClothingEntity.builder()
                     .codyId(codyEntityOptional.get().getCodyId())
                     .clothingId(tmp.getClothingId())
                     .m(tmp.getM()).x(tmp.getX()).y(tmp.getY()).z(tmp.getZ()).build();
+            cceList.add(cci);
             codyClothingRepository.save(cci);
         }
-
-        CodyDtoAll codyDtoAll = new CodyDtoAll(codyEntityOptional.get(), tagList);
+        List<ClothingInCodyDto> cicdtos = new ArrayList<>();
+        for(CodyClothingEntity codyClothingEntity :cceList){
+            cicdtos.add(new ClothingInCodyDto(codyClothingEntity,imageRepository.getOne(codyClothingEntity.getClothingId())));
+        }
+        CodyDtoAll codyDtoAll = new CodyDtoAll(codyEntityOptional.get(), tagList,cicdtos);
 
         return codyDtoAll;
     }
@@ -147,17 +160,23 @@ public class CodyServiceImpl implements CodyService {
 
 
         int len = createCody.getClothingList().size();
+        List<CodyClothingEntity> cceList = new ArrayList<>();
         for (int i = 0; i < len; i++) {
-            List<ClothingInCody> cciList = createCody.getClothingList();
-            ClothingInCody tmp = cciList.get(i);
+            List<ClothingInCodyDto> cciList = createCody.getClothingList();
+            ClothingInCodyDto tmp = cciList.get(i);
             CodyClothingEntity cci = CodyClothingEntity.builder()
                     .codyId(codyEntity.get().getCodyId())
                     .clothingId(tmp.getClothingId())
                     .m(tmp.getM()).x(tmp.getX()).y(tmp.getY()).z(tmp.getZ()).build();
+            cceList.add(cci);
             codyClothingRepository.save(cci);
         }
 
-        CodyDtoAll codyDtoAll = new CodyDtoAll(codyEntity.get(), tagList);
+        List<ClothingInCodyDto> cicdtos = new ArrayList<>();
+        for(CodyClothingEntity codyClothingEntity :cceList){
+            cicdtos.add(new ClothingInCodyDto(codyClothingEntity,imageRepository.getOne(codyClothingEntity.getClothingId())));
+        }
+        CodyDtoAll codyDtoAll = new CodyDtoAll(codyEntity.get(), tagList,cicdtos);
 
         return codyDtoAll;
 

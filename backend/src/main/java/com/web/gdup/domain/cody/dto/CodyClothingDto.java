@@ -7,12 +7,13 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class ClothingInCody {
-
+public class CodyClothingDto {
+    private int codyId;
     private int clothingId;
-    private double m;
     private int x;
     private int y;
     private int z;
+    private double m;
+
 
 }
