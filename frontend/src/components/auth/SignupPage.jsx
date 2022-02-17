@@ -81,6 +81,7 @@ const LivingRoom = css`
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Title = css`
