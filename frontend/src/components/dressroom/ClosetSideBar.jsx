@@ -76,28 +76,48 @@ export default function ClosetSidebar(props) {
 }
 
 const sidebarStyle = css`
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr 1fr 2fr 1fr 3fr 1fr;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  position: relative;
-  width: 90%;
-  height: 96%;
+  min-width: 11rem;
+  width:15%;
+  height: 29rem;
   box-sizing: border-box;
-  margin: 1rem 1rem;
-  padding: 1rem 1rem;
+  margin: 1rem;
+  padding: 0.5rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.l);
   box-shadow: 0px 0px 10px rgba(1, 1, 1, 0.2);
-  font-size: 20px;
+  font-size: 18px;
   background-color: rgb(242, 241, 240);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3.5px;
+    background-color: #BFAEA4;
+
+    &:hover {
+      background-color: #BFAEA4;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
 `;
 
 const menuItem = css`
-  font-size: 15px;
+  font-size: 14px;
   padding: 0.2rem 0px;
   cursor: pointer;
 `;
 
 const seasonItems = css`
-  font-size: 15px;
+  font-size: 8px;
   padding: 0 1px;
   list-style:none
 `;
@@ -108,6 +128,9 @@ const colorItems = css`
   align-items: center;
   flex-wrap: wrap;
   list-style:none;
+  padding: 0.2rem 0px;
+  text-overflow: ellipsis;
+  margin:0px;
 `;
 
 const colorButton = ({ colorCode, isSelected }) => css`
@@ -129,14 +152,16 @@ const tagContainer = css`
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
+  padding-left: 0px;
   list-style:none;
-  margin: 5px 0px;
+  margin-top: 0px;
   height: 15%;
+  min-height: 30px;
 `;
 
 const title = css`
-  font-size: 16px;
-  margin: 10px;
+  font-size: 14px;
+  margin: 10px 5px;
   cursor: pointer;
 `;
 

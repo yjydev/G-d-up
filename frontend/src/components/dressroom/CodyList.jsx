@@ -160,7 +160,7 @@ const message = css`
 
 const container = css`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-row: 3;
   grid-column: 2;

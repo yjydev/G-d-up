@@ -16,12 +16,12 @@ export default function TagSearchBar({ inputRef, onKeyPress }) {
 }
 
 const searchInputStyle = css`
-  height: 35px;
+  height: 25px;
   outline: 0;
   border: 0;
   border-bottom: 2px solid silver;
-  width: 100%;
-  font-size: 15px;
+  width: 90%;
+  font-size: 14px;
   background-color: rgb(242, 241, 240);
   padding-left: 10px;
 `;

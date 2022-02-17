@@ -41,10 +41,29 @@ const ItemListContainer = css`
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
-  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 23rem;
+  width: 95%;
+  height: 95%;
+  margin-top: 0.5rem;
   background-color: transparent;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3.5px;
+    background-color: #BFAEA4;
+
+    &:hover {
+      background-color: #BFAEA4;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
 `;
 
 const AddIcon = ({ isLoggedInUser }) => css`
@@ -52,8 +71,8 @@ const AddIcon = ({ isLoggedInUser }) => css`
   height: 5rem;
   cursor: pointer;
   position: absolute;
-  right: -2rem;
-  bottom: -0.4rem;
+  right: 0rem;
+  bottom: 0rem;
   ${!isLoggedInUser &&
     `
       display: none;

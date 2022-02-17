@@ -24,6 +24,7 @@ export default function LaundryItem({ images, kind, range, iconSelect, selectedI
 
 const imgStyle = ({ select }) => css`
 	border: 1px solid;
+  cursor:pointer;
 	${select &&
   `
 		color: #00acee;
