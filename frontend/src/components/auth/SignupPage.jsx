@@ -80,6 +80,7 @@ const LivingRoom = css`
   background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${dressroomBackground});
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 `;
 
 const Title = css`
@@ -92,18 +93,16 @@ const Title = css`
 const Closet = css`
   display: flex;
   justify-content: center;
-  width: 60%;
-  max-width: 50rem;
-  height: 65%;
+  width: 50rem;
+  height: 35rem;
   display:inline-block;
-  margin-top: 7%;
+  margin-top: 5%;
 `;
 
 const ItemsGridWrapper = css`
-  position: relative;
   width: 60%;
-  height: 90%;
-  margin: 2.5rem auto;
+  height: 100%;
+  margin: 0 auto 1rem;
   background-color: #BFAEA4;
   border-radius: 0.5rem;
   opacity: 0.9;
@@ -147,8 +146,8 @@ const LoginBtn = css`
 
 const BackBtn = css`
   position: absolute;
-  left: 75.7rem;
-  top: 47rem;
+  left: 70rem;
+  top: 40rem;
 
   width: 90px;
   height: 40px;
