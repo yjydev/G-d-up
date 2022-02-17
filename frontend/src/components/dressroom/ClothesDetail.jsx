@@ -97,6 +97,7 @@ const detailContainer = css`
   background-color: #3A3D41;
   opacity: 0.95;
   width: 38%;
+  min-width: 347px;
   height: 100%;
   margin: 2.5rem 1rem;
   font-size: 18px;

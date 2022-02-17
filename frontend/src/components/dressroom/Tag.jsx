@@ -25,7 +25,7 @@ const tagItem = css`
   background-color: white;
   padding: 8px 3px;
   border-radius: 18px;
-  font-size: 13px;
+  font-size: 10px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
   margin: 5px;
   min-width: 30px;
@@ -34,7 +34,7 @@ const tagItem = css`
   background-color: rgb(242, 241, 240);
 `;
 
-const tagTitle = css`
+const tagTitle =css`
   margin: 0;
   padding-left: 4px;
   vertical-align: middle;

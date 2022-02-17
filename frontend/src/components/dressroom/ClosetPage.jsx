@@ -53,22 +53,25 @@ const DressRoom = css`
   background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${dressroomBackground});
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 `;
 
 const Closet = css`
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 75%;
   max-width: 80rem;
+  min-width: 40rem;
   height: 80%;
   vertical-align: middle;
   margin-top: 3%;
+  text-overflow: ellipsis;
 `;
 
 const BackBtn = css`
   position: absolute;
-  right: 10rem;
-  bottom: 35px;
+  right: 5rem;
+  bottom: 4rem;
   width: 90px;
   height: 40px;
   background-color: white;
@@ -82,6 +85,7 @@ const ItemsGridWrapper = css`
   position: relative;
   width: 62%;
   max-width: 50rem;
+  min-width: 35rem;
   height: 100%;
   margin: 2.5rem auto;
 	display: grid;
@@ -96,7 +100,7 @@ const ItemListStyle = css`
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   position: relative;
-  width: 90%;
+  width: 95%;
   height: 96%;
-  margin: 1rem 1rem;
+  margin: 1rem 0px;
 `;

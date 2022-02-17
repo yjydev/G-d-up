@@ -116,6 +116,7 @@ const CodyBackground = css`
   background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${CodyBackgroundImg});
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 `;
 
 const Fadeup = css`

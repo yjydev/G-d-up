@@ -132,7 +132,7 @@ export default function AddClothes({ deleteTagHandler, isTagOpen, setisTagOpen, 
             </div>
 
             <div css={season}>
-              <p css={css`position: relative; top: 11px`}> 계절 </p>
+              <p css={css`position: relative; top: 11px `}> 계절 </p>
               {allSeason.map((item, index) => {
                 const seasonMatched = item === tagInfo['season'];
                 return (
@@ -167,7 +167,7 @@ export default function AddClothes({ deleteTagHandler, isTagOpen, setisTagOpen, 
             <div>
               <div css={inputContainer}>
                 <p
-                  css={css`grid-column: 1; grid-row:1; position: relative;`}>
+                  css={css`grid-column: 1; grid-row:1; position: relative; right:5px;`}>
                   태그
                   <button css={AddBtn}
                     onClick={() => setisTagOpen(!isTagOpen)}>
@@ -280,6 +280,7 @@ const tagInput = ({ isTagOpen }) => css`
   margin-left: 3rem;
   grid-column: 1;
   grid-row: 1;
+  cursor: text;
   ${isTagOpen && `
     display: inline-block;
   `}
@@ -315,7 +316,7 @@ const tagItem = css`
 
 const season = css`
   display: grid;
-  grid-template-columns: 50px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 46px 1fr 1fr 1fr 1fr;
 `;
 
 const liStyle = ({ seasonMatched }) => css`

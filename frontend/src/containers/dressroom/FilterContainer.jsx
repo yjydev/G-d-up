@@ -51,7 +51,7 @@ function FilterContainer() {
   };
 
   return (
-    <>
+    <div>
       <Categories
         categories={categories}
         selectedCategory={category}
@@ -68,7 +68,7 @@ function FilterContainer() {
         inputRef={inputRef}
         onKeyPress={onKeyPress}
       />
-    </>
+    </div>
   );
 }
 
